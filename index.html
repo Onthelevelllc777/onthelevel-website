@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>On The Level LLC — A Creative Construction Company</title>
+  <meta name="description" content="On The Level LLC — creative construction for film, TV, museums, events. Hollywood flats, set construction, custom fabrication.">
+  <link rel="icon" href="/assets/logo-dark.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    img { image-rendering: -webkit-optimize-contrast; }
+    .logo-badge { background: white; padding: .35rem .5rem; border-radius: .5rem; box-shadow: 0 1px 3px rgba(0,0,0,.08);}
+    .hero-overlay { background: linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.55)); }
+  </style>
+</head>
+<body class="min-h-screen bg-neutral-50 text-neutral-900">
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3">
+        <span class="logo-badge">
+          <img src="/assets/logo-transparent.png" onerror="this.src='/assets/logo-dark.png'" alt="On The Level LLC logo" class="h-10 md:h-12 w-auto">
+        </span>
+        <span class="sr-only">On The Level LLC — A Creative Construction Company</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#services" class="hover:opacity-80">Services</a>
+        <a href="#work" class="hover:opacity-80">Work</a>
+        <a href="#about" class="hover:opacity-80">About</a>
+        <a href="#contact" className="hover:opacity-80">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="relative overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="/assets/hero.jpg" alt="Beach build at sunset" class="w-full h-full object-cover">
+      <div class="absolute inset-0 hero-overlay"></div>
+    </div>
+    <div class="relative max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+      <div class="flex flex-col gap-4">
+        <img src="/assets/logo-transparent.png" onerror="this.src='/assets/logo-dark.png'" alt="On The Level LLC — A Creative Construction Company" class="h-20 md:h-28 w-auto drop-shadow">
+        <p class="text-white/90 text-base md:text-lg leading-relaxed max-w-prose">
+          A Creative Construction Company for film, TV, museums and events. From Hollywood flats to custom builds.
+        </p>
+        <div class="mt-2 flex items-center gap-3">
+          <a href="#contact" class="inline-flex items-center justify-center rounded-md bg-white text-neutral-900 px-4 py-2 font-medium shadow">Request a Quote</a>
+          <a href="#work" class="inline-flex items-center justify-center rounded-md border border-white/70 text-white px-4 py-2 font-medium">See Our Work</a>
+        </div>
+      </div>
+      <div class="hidden md:block"></div>
+    </div>
+  </section>
+
+  <section id="services" class="py-16 border-t bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center gap-3">
+        <img src="/assets/logo-transparent.png" onerror="this.src='/assets/logo-dark.png'" alt="logo" class="h-8 w-auto logo-badge"/>
+        <h2 class="text-3xl font-bold">Services</h2>
+      </div>
+      <p class="text-neutral-600 mt-2">Built to order, on time, on budget.</p>
+
+      <div class="grid md:grid-cols-3 gap-6 mt-8">
+        <div class="rounded-xl overflow-hidden border shadow-sm bg-white">
+          <div class="aspect-[4/3] bg-neutral-200">
+            <img src="/assets/service-flats.jpg" alt="Hollywood flats build" class="w-full h-full object-cover"/>
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold text-xl">Hollywood Flats</h3>
+            <p class="text-neutral-700 mt-2">Durable 4×8 standards, specialty sizes, and fast turnarounds. Paint-ready, skinnable, and rental options available.</p>
+          </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden border shadow-sm bg-white">
+          <div class="aspect-[4/3] bg-neutral-200">
+            <img src="/assets/service-fab.jpg" alt="Set construction" class="w-full h-full object-cover"/>
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold text-xl">Set Construction</h3>
+            <p class="text-neutral-700 mt-2">Kitchens, living rooms, porches, storefronts—precision builds for camera, stage, and exhibits.</p>
+          </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden border shadow-sm bg-white">
+          <div class="aspect-[4/3] bg-neutral-200">
+            <img src="/assets/service-set.jpg" alt="Custom fabrication" class="w-full h-full object-cover"/>
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold text-xl">Custom Fabrication</h3>
+            <p class="text-neutral-700 mt-2">Metalwork, scenic treatments, and creative problem solving for unique design challenges.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-10 text-center text-sm text-neutral-600 border-t bg-white">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col items-center gap-2">
+      <img src="/assets/logo-transparent.png" onerror="this.src='/assets/logo-dark.png'" alt="On The Level LLC" class="h-10 w-auto logo-badge" />
+      <div>&copy; 2025 On The Level LLC • A Creative Construction Company</div>
+    </div>
+  </footer>
+</body>
+</html>
