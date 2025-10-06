@@ -4,14 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>On The Level LLC — A Creative Construction Company</title>
-  <meta name="description" content="On The Level LLC — creative construction for film, TV, museums, and events. Hollywood flats, set construction, custom fabrication." />
+  <meta name="description" content="On The Level LLC — creative construction for film, TV, museums, and events. Production flats, set construction, custom fabrication." />
   <link rel="icon" href="/assets/logo-dark.png" />
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Font: Caveat Bold -->
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+
   <style>
     html { scroll-behavior: smooth; }
     img { image-rendering: -webkit-optimize-contrast; }
     .hero-overlay { background: linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.55)); }
     .card { border:1px solid #e5e7eb; border-radius:.75rem; overflow:hidden; background:#fff; }
+    /* Safer than Tailwind's arbitrary family on some CDNs */
+    .font-caveat { font-family: 'Caveat', cursive; }
   </style>
 </head>
 <body class="min-h-screen bg-neutral-50 text-neutral-900">
@@ -41,8 +47,8 @@
         alt="On The Level LLC — A Creative Construction Company"
         class="max-w-[600px] w-full h-auto drop-shadow-lg"
       />
-      <p class="text-white text-2xl md:text-4xl font-bold leading-relaxed drop-shadow-xl">
-        Our Clients Consist of Film and TV Producers, Museum Curators, Schools and Churches and Event/Trade Show and Marketing Professionals.
+      <p class="font-caveat font-bold text-white drop-shadow-xl text-[28px] md:text-[36px] leading-snug max-w-3xl">
+        Our diverse clientele includes film and television producers, museum curators, educational institutions, Churches, and professionals in event management, trade shows, and marketing. How can we help you bring your creative vision to life?
       </p>
       <div class="mt-4 flex items-center gap-4 justify-center">
         <a href="#contact" class="inline-flex items-center justify-center rounded-md bg-white text-neutral-900 px-6 py-3 font-semibold shadow">Request a Quote</a>
@@ -58,6 +64,7 @@
       <p class="text-neutral-600 mt-2">Built to order, on time, on budget.</p>
 
       <div class="grid md:grid-cols-3 gap-6 mt-8">
+        <!-- Production Flats -->
         <div class="card">
           <div class="aspect-[4/3] bg-neutral-200">
             <img src="/assets/service-flats.jpg" alt="Hollywood flats build" class="w-full h-full object-cover" />
@@ -68,6 +75,7 @@
           </div>
         </div>
 
+        <!-- Set Construction -->
         <div class="card">
           <div class="aspect-[4/3] bg-neutral-200">
             <img src="/assets/service-fab.jpg" alt="Set construction" class="w-full h-full object-cover" />
@@ -78,6 +86,7 @@
           </div>
         </div>
 
+        <!-- Custom Fabrication -->
         <div class="card">
           <div class="aspect-[4/3] bg-neutral-200">
             <img src="/assets/service-set.jpg" alt="Custom fabrication" class="w-full h-full object-cover" />
@@ -106,15 +115,12 @@
       <div class="md:col-span-2">
         <h2 class="text-3xl font-bold">About Us</h2>
         <div class="mt-4 text-neutral-700 leading-relaxed space-y-6">
-
           <p>
             Founded by <strong>Christopher Halladay</strong>, On The Level LLC leverages a deep foundation of practical experience, from carpenter to Construction Coordinator, offering unparalleled understanding of the industry's demands and challenges. Under Chris’s leadership, projects benefit from extensive practical knowledge, strategic insight, and a commitment to excellence.
           </p>
-
           <p>
             We are problem-solvers dedicated to navigating industry exigencies with skill, innovation, and dedication. Our core team of experienced professionals, augmented by a trusted network of skilled artisans and specialists, allows us to scale efficiently, adapt swiftly, and meet deadlines without compromising quality. We uphold the highest standards of safety, quality, and creative integrity, ensuring projects exceed client expectations and leave a lasting impact.
           </p>
-
           <p>
             We cater to a diverse clientele demanding excellence, precision, and innovative solutions in visual storytelling and experiential designs. We partner with these visionaries to bring their ambitious concepts to life. Our esteemed clients include:
           </p>
@@ -187,7 +193,7 @@
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Work gallery
+    // Numbered Work gallery that auto-skips missing files
     (function buildWorkGallery() {
       const MAX_WORK_IMAGES = 50;
       const grid = document.getElementById('work-grid');
