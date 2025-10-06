@@ -2,36 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>On The Level LLC — A Creative Construction Company</title>
-  <meta name="description" content="On The Level LLC — creative construction for film, TV, museums, and events. Production flats, set construction, custom fabrication." />
+  <meta name="description" content="On The Level LLC — production flats, set construction, and custom fabrication for film, TV, museums, events, schools and churches." />
   <link rel="icon" href="/assets/logo-dark.png" />
-  <!-- Tailwind -->
+
+  <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Font: Caveat Bold -->
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Caveat Bold (for the hero line) -->
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet" />
 
   <style>
-    html { scroll-behavior: smooth; }
+    /* Crisp image rendering on most browsers */
     img { image-rendering: -webkit-optimize-contrast; }
-    .hero-overlay { background: linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.55)); }
-    .card { border:1px solid #e5e7eb; border-radius:.75rem; overflow:hidden; background:#fff; }
-    .font-caveat { font-family: 'Caveat', cursive; }
-    /* Soft vertical gradient behind hero line (subtle, no hard box look) */
-    .soft-gradient {
-      background: linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0,.5));
-      padding: .15em .35em;
-      border-radius: .125rem;
-      line-height: 1.25;
+
+    /* Global hero overlay */
+    .hero-overlay { background: linear-gradient(to bottom, rgba(0,0,0,.50), rgba(0,0,0,.65)); }
+
+    /* Subtle badge if you ever need it */
+    .logo-badge { background: white; padding: .35rem .5rem; border-radius: .5rem; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+
+    /* Soft gradient only behind the client headline */
+    .headline-wrap {
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.70) 0%,
+        rgba(0,0,0,0.55) 55%,
+        rgba(0,0,0,0.35) 100%
+      );
     }
   </style>
 </head>
 <body class="min-h-screen bg-neutral-50 text-neutral-900">
-  <!-- HEADER -->
+
+  <!-- Header / Nav -->
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <span class="sr-only">On The Level LLC — A Creative Construction Company</span>
-      <nav class="flex items-center gap-6 text-sm">
+      <a href="#home" class="flex items-center gap-3">
+        <span class="logo-badge">
+          <img src="/assets/logo-transparent.png"
+               onerror="this.src='/assets/logo-dark.png'"
+               alt="On The Level LLC logo"
+               class="h-10 md:h-12 w-auto" />
+        </span>
+        <span class="sr-only">On The Level LLC — A Creative Construction Company</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
         <a href="#services" class="hover:opacity-80">Services</a>
         <a href="#work" class="hover:opacity-80">Work</a>
         <a href="#about" class="hover:opacity-80">About</a>
@@ -41,27 +58,39 @@
   </header>
 
   <!-- HERO -->
-  <section id="home" class="relative overflow-hidden h-[80vh] flex items-center">
+  <section id="home" class="relative overflow-hidden">
     <div class="absolute inset-0">
-      <img src="/assets/hero.jpg" alt="Construction work at sunset" class="w-full h-full object-cover" />
+      <img src="/assets/hero.jpg" alt="Outdoor set build at sunset" class="w-full h-full object-cover">
       <div class="absolute inset-0 hero-overlay"></div>
     </div>
-    <div class="relative max-w-5xl mx-auto px-4 text-center flex flex-col items-center gap-6">
-      <!-- 200% larger, but responsive: scales up on larger screens and stays mobile-friendly -->
+
+    <!-- Center contents between top and bottom, stacked column -->
+    <div class="relative max-w-6xl mx-auto px-4 py-12 sm:py-16 md:py-20 lg:py-24 flex flex-col items-center text-center gap-6 sm:gap-8">
+      <!-- Large, responsive logo -->
       <img
         src="/assets/logo-transparent.png"
         onerror="this.src='/assets/logo-dark.png'"
         alt="On The Level LLC — A Creative Construction Company"
-        class="w-full h-auto drop-shadow-lg max-w-[520px] sm:max-w-[720px] md:max-w-[900px] lg:max-w-[1200px]"
+        class="w-[600px] max-w-[90vw] h-auto drop-shadow mx-auto"
       />
-      <p class="font-caveat font-bold text-white drop-shadow-xl text-[28px] md:text-[36px] leading-snug max-w-4xl">
-        <span class="soft-gradient">
-          Our diverse clientele includes film and television producers, museum curators, educational institutions, Churches, and professionals in event management, trade shows, and marketing. How can we help you bring your creative vision to life?
-        </span>
-      </p>
-      <div class="mt-4 flex items-center gap-4 justify-center">
-        <a href="#contact" class="inline-flex items-center justify-center rounded-md bg-white text-neutral-900 px-6 py-3 font-semibold shadow">Request a Quote</a>
-        <a href="#work" class="inline-flex items-center justify-center rounded-md border border-white/70 text-white px-6 py-3 font-semibold">See Our Work</a>
+
+      <!-- Headline with soft vertical gradient behind it -->
+      <div class="headline-wrap rounded-md px-4 sm:px-6 py-3 max-w-5xl mx-auto">
+        <p class="text-white font-bold"
+           style="font-family:'Caveat',cursive;font-weight:700;font-size:clamp(20px,4vw,36px);">
+          Our diverse clientele includes film and television producers, museum curators, educational institutions,
+          Churches, and professionals in event management, trade shows, and marketing. How can we help you bring your
+          creative vision to life?
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-2">
+        <a href="#contact" class="inline-flex items-center justify-center rounded-md bg-white text-neutral-900 px-4 py-2 font-medium shadow">
+          Request a Quote
+        </a>
+        <a href="#work" class="inline-flex items-center justify-center rounded-md border border-white/70 text-white px-4 py-2 font-medium">
+          See Our Work
+        </a>
       </div>
     </div>
   </section>
@@ -69,40 +98,49 @@
   <!-- SERVICES -->
   <section id="services" class="py-16 border-t bg-white">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold">Services</h2>
+      <div class="flex items-center gap-3">
+        <img src="/assets/logo-transparent.png" onerror="this.src='/assets/logo-dark.png'" alt="logo" class="h-8 w-auto logo-badge" />
+        <h2 class="text-3xl font-bold">Services</h2>
+      </div>
       <p class="text-neutral-600 mt-2">Built to order, on time, on budget.</p>
 
       <div class="grid md:grid-cols-3 gap-6 mt-8">
-        <!-- Production Flats (renamed from Hollywood Flats) -->
-        <div class="card">
+        <!-- Production Flats -->
+        <div class="rounded-xl overflow-hidden border shadow-sm bg-white">
           <div class="aspect-[4/3] bg-neutral-200">
             <img src="/assets/service-flats.jpg" alt="Production flats build" class="w-full h-full object-cover" />
           </div>
           <div class="p-5">
             <h3 class="font-semibold text-xl">Production Flats</h3>
-            <p class="text-neutral-700 mt-2">Durable 4×8 standards, specialty sizes, and fast turnarounds. Paint-ready, skinnable, and rental options available.</p>
+            <p class="text-neutral-700 mt-2">
+              Durable 4×8 standards, specialty sizes, and fast turnarounds. Paint-ready, skinnable, and rental options available.
+            </p>
           </div>
         </div>
 
         <!-- Set Construction -->
-        <div class="card">
+        <div class="rounded-xl overflow-hidden border shadow-sm bg-white">
           <div class="aspect-[4/3] bg-neutral-200">
-            <img src="/assets/service-fab.jpg" alt="Set construction" class="w-full h-full object-cover" />
+            <img src="/assets/service-set.jpg" alt="Set construction" class="w-full h-full object-cover" />
           </div>
           <div class="p-5">
             <h3 class="font-semibold text-xl">Set Construction</h3>
-            <p class="text-neutral-700 mt-2">Kitchens, living rooms, porches, storefronts—precision builds for camera, stage, and exhibits.</p>
+            <p class="text-neutral-700 mt-2">
+              Kitchens, living rooms, porches, storefronts—precision builds for camera, stage, and exhibits.
+            </p>
           </div>
         </div>
 
         <!-- Custom Fabrication -->
-        <div class="card">
+        <div class="rounded-xl overflow-hidden border shadow-sm bg-white">
           <div class="aspect-[4/3] bg-neutral-200">
-            <img src="/assets/service-set.jpg" alt="Custom fabrication" class="w-full h-full object-cover" />
+            <img src="/assets/service-fab.jpg" alt="Custom fabrication" class="w-full h-full object-cover" />
           </div>
           <div class="p-5">
             <h3 class="font-semibold text-xl">Custom Fabrication</h3>
-            <p class="text-neutral-700 mt-2">Metalwork, scenic treatments, and creative problem solving for unique design challenges.</p>
+            <p class="text-neutral-700 mt-2">
+              Metalwork, scenic treatments, and creative problem-solving for unique design challenges.
+            </p>
           </div>
         </div>
       </div>
@@ -110,124 +148,156 @@
   </section>
 
   <!-- WORK -->
-  <section id="work" class="py-16 border-t">
+  <section id="work" class="py-16 border-t bg-white">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold">Selected Work</h2>
-      <p class="text-neutral-600 mt-2">Upload <code>assets/work-1.jpg</code>, <code>work-2.jpg</code>, … and they’ll appear automatically.</p>
-      <div id="work-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8"></div>
+      <div class="flex items-center gap-3">
+        <img src="/assets/logo-transparent.png" onerror="this.src='/assets/logo-dark.png'" alt="logo" class="h-8 w-auto logo-badge" />
+        <h2 class="text-3xl font-bold">Work</h2>
+      </div>
+      <p class="text-neutral-600 mt-2">
+        Add photos named <code>work-01.jpg</code>, <code>work-02.jpg</code> … up to <code>work-50.jpg</code>
+        inside <code>/assets/work</code>. Missing files are automatically skipped.
+      </p>
+
+      <div id="workGrid" class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about" class="py-16 border-t bg-white">
-    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-10 items-start">
-      <div class="md:col-span-2">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center gap-3">
+        <img src="/assets/logo-transparent.png" onerror="this.src='/assets/logo-dark.png'" alt="logo" class="h-8 w-auto logo-badge" />
         <h2 class="text-3xl font-bold">About Us</h2>
-        <div class="mt-4 text-neutral-700 leading-relaxed space-y-6">
-          <p>
-            Founded by <strong>Christopher Halladay</strong>, On The Level LLC leverages a deep foundation of practical experience, from carpenter to Construction Coordinator, offering unparalleled understanding of the industry's demands and challenges. Under Chris’s leadership, projects benefit from extensive practical knowledge, strategic insight, and a commitment to excellence.
-          </p>
-          <p>
-            We are problem-solvers dedicated to navigating industry exigencies with skill, innovation, and dedication. Our core team of experienced professionals, augmented by a trusted network of skilled artisans and specialists, allows us to scale efficiently, adapt swiftly, and meet deadlines without compromising quality. We uphold the highest standards of safety, quality, and creative integrity, ensuring projects exceed client expectations and leave a lasting impact.
-          </p>
-          <p>
-            We cater to a diverse clientele demanding excellence, precision, and innovative solutions in visual storytelling and experiential designs. We partner with these visionaries to bring their ambitious concepts to life. Our esteemed clients include:
-          </p>
-
-          <h3 class="text-xl font-semibold mt-6">Film and TV Producers</h3>
-          <p>
-            We are the first choice for any director, producer, designer, and art director in the film and television industry that we have had the privilege of working with. That is because our expertise lies in the meticulous development and construction of authentic, visually stunning sets and intricate, custom-fabricated props. Every project we undertake is executed with a profound understanding of the demanding requirements of cinematic and television production.
-          </p>
-          <p>
-            Our team possesses a deep-rooted knowledge of cinematic aesthetics, including the nuances of composition, color theory, and visual storytelling. We are also highly proficient in the art and science of lighting, ensuring that every element we create will seamlessly integrate with the desired mood and atmosphere. Furthermore, our experience extends to practical effects, where we skillfully craft elements that enhance realism and provide tangible impact on screen.
-          </p>
-          <p>
-            Crucially, we understand the complexities of on-set operational needs. This encompasses everything from efficient construction and breakdown to safety protocols and the logistical considerations of working within a fast-paced production environment. This comprehensive understanding makes us an invaluable asset to any production, as we are committed to bringing cinematic visions to life with unparalleled realism, creative ingenuity, and a dedication to seamless execution.
-          </p>
-
-          <h3 class="text-xl font-semibold mt-6">Museum Curators</h3>
-          <p>
-            As a dedicated team of subcontractors, we excel in the art of exhibit development, specializing in the creation of captivating, durable, and meticulously crafted experiences. Our passion lies in crafting exhibits that not only engage and educate but also stand as enduring testaments to their subjects. We are committed to upholding both historical accuracy and artistic integrity in every project, transforming ordinary spaces into immersive journeys of discovery.
-          </p>
-          <p>
-            Our expertise encompasses a comprehensive approach, from concept and design to fabrication and installation. We work closely with our clients to understand their vision, translating complex narratives into accessible and visually stunning displays. Whether for museums, cultural centers, or educational institutions, our exhibits are designed to inspire wonder, spark curiosity, and facilitate profound learning experiences for visitors of all ages.
-          </p>
-
-          <h3 class="text-xl font-semibold mt-6">Schools and Churches</h3>
-          <p>
-            We enhance theater productions with fundamental, innovative, and inspiring upgrades. Our expertise lies in crafting custom stage pieces, visually captivating and meticulously engineered for safety and durability, built to client specifications. These sets and props enhance storytelling, spark imagination, and deepen connection to the material. For churches, we construct sets that powerfully facilitate faith-based narratives like the Nativity or Resurrection, creating sacred and engaging atmospheres for deeper connection to faith.
-          </p>
-
-          <h3 class="text-xl font-semibold mt-6">Event, Trade Show & Marketing Projects</h3>
-          <p>
-            We offer comprehensive and strategic partnerships in designing and executing exceptional, highly functional, and memorable builds. Our expertise covers dynamic event productions, intricate trade show exhibits, and large-scale marketing projects for prominent companies. From concept to installation, we manage every aspect for a flawless experience. We specialize in unique, lasting marketing displays and high-level product exhibitions, ensuring seamless execution, logistical precision, and unforgettable products that captivate audiences. We blend stunning aesthetics, robust practicality, and meticulous attention to detail to exceed expectations and transform ideas into impactful realities.
-          </p>
-
-          <h3 class="text-xl font-semibold mt-6">Our Capabilities: From Concept to Tangible Reality</h3>
-          <p>
-            At On The Level LLC, our capabilities are diverse. We possess the expertise, tools, and creative ingenuity for projects from traditional Production flats to intricate, camera-ready sets for cinematic effects. We excel in comprehensive museum exhibit fabrication, prioritizing precision, durability, interaction, and educational value. We also thrive on unique custom fabrications, transforming abstract ideas into tangible, functional, and remarkable creations that consistently exceed expectations.
-          </p>
-        </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow aspect-[4/3] bg-neutral-200 md:col-span-1 flex items-center justify-center">
-        <img src="/assets/logo-dark.png" alt="On The Level LLC" class="max-w-[240px] w-full h-auto opacity-80" />
+      <div class="prose max-w-none mt-6 prose-neutral">
+        <p>
+          Founded by Christopher Halladay, On The Level LLC leverages a deep foundation of practical experience,
+          from carpenter to Construction Coordinator, offering unparalleled understanding of the industry's demands
+          and challenges. Under Chris’s leadership, projects benefit from extensive practical knowledge, strategic
+          insight, and a commitment to excellence.
+        </p>
+        <p>
+          We are problem-solvers dedicated to navigating industry exigencies with skill, innovation, and dedication.
+          Our core team of experienced professionals, augmented by a trusted network of skilled artisans and specialists,
+          allows us to scale efficiently, adapt swiftly, and meet deadlines without compromising quality. We uphold the
+          highest standards of safety, quality, and creative integrity, ensuring projects exceed client expectations and
+          leave a lasting impact.
+        </p>
+        <p>
+          We cater to a diverse clientele demanding excellence, precision, and innovative solutions in visual storytelling
+          and experiential designs. We partner with these visionaries to bring their ambitious concepts to life. Our
+          esteemed clients include:
+        </p>
+        <p>
+          <strong>Film and TV Producers:</strong> We are the first choice for any director, producer, designer, and art
+          director in the film and television industry that we have had the privilege of working with. That is because our
+          expertise lies in the meticulous development and construction of authentic, visually stunning sets and intricate,
+          custom-fabricated props. Every project we undertake is executed with a profound understanding of the demanding
+          requirements of cinematic and television production.
+        </p>
+        <p>
+          Our team possesses a deep-rooted knowledge of cinematic aesthetics, including the nuances of composition, color
+          theory, and visual storytelling. We are also highly proficient in the art and science of lighting, ensuring that
+          every element we create will seamlessly integrate with the desired mood and atmosphere. Furthermore, our experience
+          extends to practical effects, where we skillfully craft elements that enhance realism and provide tangible impact
+          on screen.
+        </p>
+        <p>
+          Crucially, we understand the complexities of on-set operational needs. This encompasses everything from efficient
+          construction and breakdown to safety protocols and the logistical considerations of working within a fast-paced
+          production environment. This comprehensive understanding makes us an invaluable asset to any production, as we are
+          committed to bringing cinematic visions to life with unparalleled realism, creative ingenuity, and a dedication to
+          seamless execution. We transform abstract concepts into tangible realities, ensuring that every detail contributes
+          to the overall immersive experience for the audience.
+        </p>
+        <p>
+          <strong>Museum Curators:</strong> As a dedicated team of subcontractors, we excel in the art of exhibit development,
+          specializing in the creation of captivating, durable, and meticulously crafted experiences. Our passion lies in
+          crafting exhibits that not only engage and educate but also stand as enduring testaments to their subjects. We are
+          committed to upholding both historical accuracy and artistic integrity in every project, transforming ordinary
+          spaces into immersive journeys of discovery.
+        </p>
+        <p>
+          Our expertise encompasses a comprehensive approach, from concept and design to fabrication and installation.
+          We work closely with our clients to understand their vision, translating complex narratives into accessible and
+          visually stunning displays. Whether for museums, cultural centers, or educational institutions, our exhibits
+          are designed to inspire wonder, spark curiosity, and facilitate profound learning experiences for visitors of
+          all ages. We believe that a truly successful exhibit is one that creates lasting memories and fosters a deeper
+          appreciation for the stories it tells.
+        </p>
+        <p>
+          <strong>Schools and Churches:</strong> We enhance theater productions with fundamental, innovative, and inspiring
+          upgrades. Our expertise lies in crafting custom stage pieces, visually captivating and meticulously engineered for
+          safety and durability, built to client specifications. These sets and props enhance storytelling, spark imagination,
+          and deepen connection to the material. For churches, we construct sets that powerfully facilitate faith-based
+          narratives like the Nativity or Resurrection, creating sacred and engaging atmospheres for deeper connection to faith.
+        </p>
+        <p>
+          <strong>Event/Trade Show and Marketing Projects:</strong> We offer comprehensive and strategic partnerships in
+          designing and executing exceptional, highly functional, and memorable builds. Our expertise covers dynamic event
+          productions, intricate trade show exhibits, and large-scale marketing projects for prominent companies. From
+          concept to installation, we manage every aspect for a flawless experience. We specialize in unique, lasting
+          marketing displays and high-level product exhibitions, ensuring seamless execution, logistical precision, and
+          unforgettable products that captivate audiences. We blend stunning aesthetics, robust practicality, and meticulous
+          attention to detail to exceed expectations and transform ideas into impactful realities.
+        </p>
+        <p>
+          <strong>Our Capabilities: From Concept to Tangible Reality</strong><br />
+          At On The Level LLC, our capabilities are diverse. We possess the expertise, tools, and creative ingenuity for
+          projects from traditional Production Flats to intricate, camera-ready sets for cinematic effects. We excel in
+          comprehensive museum exhibit fabrication, prioritizing precision, durability, interaction, and educational value.
+          We also thrive on unique custom fabrications, transforming abstract ideas into tangible, functional, and remarkable
+          creations that consistently exceed expectations.
+        </p>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="py-16 border-t">
+  <section id="contact" class="py-16 border-t bg-white">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold">Contact</h2>
-      <p class="text-neutral-600 mt-2">Tell us about your project. We’ll respond quickly.</p>
-      <div class="grid md:grid-cols-3 gap-6 mt-8 text-sm">
-        <div>Email: <a class="underline" href="mailto:hello@example.com">hello@example.com</a></div>
-        <div>Phone: <a class="underline" href="tel:+19180000000">(918) 000-0000</a></div>
-        <div>Claremore, Oklahoma • Serving OK & beyond</div>
+      <div class="flex items-center gap-3">
+        <img src="/assets/logo-transparent.png" onerror="this.src='/assets/logo-dark.png'" alt="logo" class="h-8 w-auto logo-badge" />
+        <h2 class="text-3xl font-bold">Contact</h2>
       </div>
+      <p class="text-neutral-700 mt-4">
+        Ready to build? Email us at
+        <a class="text-blue-600 underline" href="mailto:info@onthelevelllc.com">info@onthelevelllc.com</a>
+        or click “Request a Quote” above.
+      </p>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="py-10 text-center text-sm text-neutral-600 border-t bg-white">
     <div class="max-w-6xl mx-auto px-4 flex flex-col items-center gap-2">
-      <img src="/assets/logo-transparent.png" onerror="this.src='/assets/logo-dark.png'" alt="On The Level LLC" class="h-12 w-auto" />
-      <div>&copy; <span id="year"></span> On The Level LLC • A Creative Construction Company</div>
+      <img src="/assets/logo-transparent.png" onerror="this.src='/assets/logo-dark.png'" alt="On The Level LLC" class="h-10 w-auto logo-badge" />
+      <div>&copy; 2025 On The Level LLC • A Creative Construction Company</div>
     </div>
   </footer>
 
-  <!-- SCRIPTS -->
+  <!-- WORK GRID SCRIPT: generates work-01.jpg ... work-50.jpg and hides any that 404 -->
   <script>
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Numbered Work gallery that auto-skips missing files
-    (function buildWorkGallery() {
-      const MAX_WORK_IMAGES = 50;
-      const grid = document.getElementById('work-grid');
-      function addWorkImage(n) {
+    (function () {
+      const grid = document.getElementById('workGrid');
+      const total = 50; // up to work-50.jpg
+      for (let i = 1; i <= total; i++) {
+        const n = String(i).padStart(2, '0');
         const wrap = document.createElement('div');
-        wrap.className = 'rounded-xl overflow-hidden bg-neutral-200';
-        wrap.style.aspectRatio = '4/3';
+        wrap.className = 'aspect-[4/3] bg-neutral-200 rounded-md overflow-hidden';
+
         const img = document.createElement('img');
         img.loading = 'lazy';
-        img.decoding = 'async';
-        img.alt = 'Project ' + n;
+        img.alt = `Project photo ${n}`;
         img.className = 'w-full h-full object-cover';
-        img.src = '/assets/work-' + n + '.jpg';
-        img.onerror = function () {
-          if (!img.dataset.triedPng) {
-            img.dataset.triedPng = '1';
-            img.src = '/assets/work-' + n + '.png';
-          } else {
-            wrap.remove();
-          }
-        };
+        img.src = `/assets/work/work-${n}.jpg`;
+        img.onerror = () => wrap.remove(); // remove if missing
+
         wrap.appendChild(img);
         grid.appendChild(wrap);
       }
-      for (let i = 1; i <= MAX_WORK_IMAGES; i++) addWorkImage(i);
     })();
   </script>
 </body>
