@@ -16,8 +16,14 @@
     img { image-rendering: -webkit-optimize-contrast; }
     .hero-overlay { background: linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.55)); }
     .card { border:1px solid #e5e7eb; border-radius:.75rem; overflow:hidden; background:#fff; }
-    /* Safer than Tailwind's arbitrary family on some CDNs */
     .font-caveat { font-family: 'Caveat', cursive; }
+    /* Soft vertical gradient behind hero line (subtle, no hard box look) */
+    .soft-gradient {
+      background: linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0,.5));
+      padding: .15em .35em;
+      border-radius: .125rem;
+      line-height: 1.25;
+    }
   </style>
 </head>
 <body class="min-h-screen bg-neutral-50 text-neutral-900">
@@ -40,15 +46,18 @@
       <img src="/assets/hero.jpg" alt="Construction work at sunset" class="w-full h-full object-cover" />
       <div class="absolute inset-0 hero-overlay"></div>
     </div>
-    <div class="relative max-w-4xl mx-auto px-4 text-center flex flex-col items-center gap-6">
+    <div class="relative max-w-5xl mx-auto px-4 text-center flex flex-col items-center gap-6">
+      <!-- 200% larger, but responsive: scales up on larger screens and stays mobile-friendly -->
       <img
         src="/assets/logo-transparent.png"
         onerror="this.src='/assets/logo-dark.png'"
         alt="On The Level LLC — A Creative Construction Company"
-        class="max-w-[600px] w-full h-auto drop-shadow-lg"
+        class="w-full h-auto drop-shadow-lg max-w-[520px] sm:max-w-[720px] md:max-w-[900px] lg:max-w-[1200px]"
       />
-      <p class="font-caveat font-bold text-white drop-shadow-xl text-[28px] md:text-[36px] leading-snug max-w-3xl">
-        Our diverse clientele includes film and television producers, museum curators, educational institutions, Churches, and professionals in event management, trade shows, and marketing. How can we help you bring your creative vision to life?
+      <p class="font-caveat font-bold text-white drop-shadow-xl text-[28px] md:text-[36px] leading-snug max-w-4xl">
+        <span class="soft-gradient">
+          Our diverse clientele includes film and television producers, museum curators, educational institutions, Churches, and professionals in event management, trade shows, and marketing. How can we help you bring your creative vision to life?
+        </span>
       </p>
       <div class="mt-4 flex items-center gap-4 justify-center">
         <a href="#contact" class="inline-flex items-center justify-center rounded-md bg-white text-neutral-900 px-6 py-3 font-semibold shadow">Request a Quote</a>
@@ -64,13 +73,13 @@
       <p class="text-neutral-600 mt-2">Built to order, on time, on budget.</p>
 
       <div class="grid md:grid-cols-3 gap-6 mt-8">
-        <!-- Production Flats -->
+        <!-- Production Flats (renamed from Hollywood Flats) -->
         <div class="card">
           <div class="aspect-[4/3] bg-neutral-200">
-            <img src="/assets/service-flats.jpg" alt="Hollywood flats build" class="w-full h-full object-cover" />
+            <img src="/assets/service-flats.jpg" alt="Production flats build" class="w-full h-full object-cover" />
           </div>
           <div class="p-5">
-            <h3 class="font-semibold text-xl">Hollywood Flats</h3>
+            <h3 class="font-semibold text-xl">Production Flats</h3>
             <p class="text-neutral-700 mt-2">Durable 4×8 standards, specialty sizes, and fast turnarounds. Paint-ready, skinnable, and rental options available.</p>
           </div>
         </div>
@@ -156,7 +165,7 @@
 
           <h3 class="text-xl font-semibold mt-6">Our Capabilities: From Concept to Tangible Reality</h3>
           <p>
-            At On The Level LLC, our capabilities are diverse. We possess the expertise, tools, and creative ingenuity for projects from traditional Hollywood flats to intricate, camera-ready sets for cinematic effects. We excel in comprehensive museum exhibit fabrication, prioritizing precision, durability, interaction, and educational value. We also thrive on unique custom fabrications, transforming abstract ideas into tangible, functional, and remarkable creations that consistently exceed expectations.
+            At On The Level LLC, our capabilities are diverse. We possess the expertise, tools, and creative ingenuity for projects from traditional Production flats to intricate, camera-ready sets for cinematic effects. We excel in comprehensive museum exhibit fabrication, prioritizing precision, durability, interaction, and educational value. We also thrive on unique custom fabrications, transforming abstract ideas into tangible, functional, and remarkable creations that consistently exceed expectations.
           </p>
         </div>
       </div>
