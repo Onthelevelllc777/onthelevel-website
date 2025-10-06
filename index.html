@@ -1,19 +1,21 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>On The Level LLC — A Creative Construction Company</title>
-  <meta name="description" content="On The Level LLC — creative construction for film, TV, museums, events. Hollywood flats, set construction, custom fabrication.">
-  <link rel="icon" href="/assets/logo-dark.png">
+  <meta name="description" content="On The Level LLC — creative construction for film, TV, museums, and events. Hollywood flats, set construction, custom fabrication." />
+  <link rel="icon" href="/assets/logo-dark.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    html { scroll-behavior: smooth; }
     img { image-rendering: -webkit-optimize-contrast; }
     .hero-overlay { background: linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.55)); }
+    .card { border:1px solid #e5e7eb; border-radius:.75rem; overflow:hidden; background:#fff; }
   </style>
 </head>
 <body class="min-h-screen bg-neutral-50 text-neutral-900">
-  <!-- HEADER -->
+  <!-- HEADER (nav only, no small logo) -->
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       <span class="sr-only">On The Level LLC — A Creative Construction Company</span>
@@ -26,17 +28,19 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO (centered logo + tagline) -->
   <section id="home" class="relative overflow-hidden h-[80vh] flex items-center">
     <div class="absolute inset-0">
-      <img src="/assets/hero.jpg" alt="Beach build at sunset" class="w-full h-full object-cover">
+      <img src="/assets/hero.jpg" alt="Beach build at sunset" class="w-full h-full object-cover" />
       <div class="absolute inset-0 hero-overlay"></div>
     </div>
     <div class="relative max-w-4xl mx-auto px-4 text-center flex flex-col items-center gap-6">
-      <img src="/assets/logo-transparent.png" 
-           onerror="this.src='/assets/logo-dark.png'" 
-           alt="On The Level LLC — A Creative Construction Company" 
-           class="max-w-[400px] w-full h-auto drop-shadow-lg">
+      <img
+        src="/assets/logo-transparent.png"
+        onerror="this.src='/assets/logo-dark.png'"
+        alt="On The Level LLC — A Creative Construction Company"
+        class="max-w-[400px] w-full h-auto drop-shadow-lg"
+      />
       <p class="text-white text-xl md:text-3xl font-semibold leading-relaxed drop-shadow-lg">
         A Creative Construction Company for film, TV, museums and events. From Hollywood flats to custom builds.
       </p>
@@ -54,10 +58,10 @@
       <p class="text-neutral-600 mt-2">Built to order, on time, on budget.</p>
 
       <div class="grid md:grid-cols-3 gap-6 mt-8">
-        <!-- Flats -->
-        <div class="rounded-xl overflow-hidden border shadow-sm bg-white">
+        <!-- Hollywood Flats -->
+        <div class="card">
           <div class="aspect-[4/3] bg-neutral-200">
-            <img src="/assets/service-flats.jpg" alt="Hollywood flats build" class="w-full h-full object-cover"/>
+            <img src="/assets/service-flats.jpg" alt="Hollywood flats build" class="w-full h-full object-cover" />
           </div>
           <div class="p-5">
             <h3 class="font-semibold text-xl">Hollywood Flats</h3>
@@ -65,10 +69,10 @@
           </div>
         </div>
 
-        <!-- Set Construction -->
-        <div class="rounded-xl overflow-hidden border shadow-sm bg-white">
+        <!-- Set Construction (swapped per your preference) -->
+        <div class="card">
           <div class="aspect-[4/3] bg-neutral-200">
-            <img src="/assets/service-fab.jpg" alt="Set construction" class="w-full h-full object-cover"/>
+            <img src="/assets/service-fab.jpg" alt="Set construction" class="w-full h-full object-cover" />
           </div>
           <div class="p-5">
             <h3 class="font-semibold text-xl">Set Construction</h3>
@@ -76,10 +80,10 @@
           </div>
         </div>
 
-        <!-- Fabrication -->
-        <div class="rounded-xl overflow-hidden border shadow-sm bg-white">
+        <!-- Custom Fabrication (swapped per your preference) -->
+        <div class="card">
           <div class="aspect-[4/3] bg-neutral-200">
-            <img src="/assets/service-set.jpg" alt="Custom fabrication" class="w-full h-full object-cover"/>
+            <img src="/assets/service-set.jpg" alt="Custom fabrication" class="w-full h-full object-cover" />
           </div>
           <div class="p-5">
             <h3 class="font-semibold text-xl">Custom Fabrication</h3>
@@ -90,12 +94,110 @@
     </div>
   </section>
 
+  <!-- WORK (numbered auto-gallery: work-1.jpg .. work-50.jpg; no blanks for missing files) -->
+  <section id="work" class="py-16 border-t">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold">Selected Work</h2>
+      <p class="text-neutral-600 mt-2">Upload <code>assets/work-1.jpg</code>, <code>work-2.jpg</code>, … and they’ll appear automatically.</p>
+
+      <div id="work-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-16 border-t bg-white">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-10 items-start">
+      <div class="md:col-span-2">
+        <h2 class="text-3xl font-bold">About</h2>
+        <p class="mt-4 text-neutral-700 leading-relaxed">
+          <strong>On The Level LLC</strong> is a creative construction company specializing in camera-ready sets and precision
+          fabrication for film, television, exhibits, and live events. Founded by <strong>Christopher Halladay</strong> (Founder).
+          We scale with a trusted network to deliver on tight timelines without compromising safety or quality.
+        </p>
+
+        <div class="mt-6">
+          <h3 class="font-semibold">Selected Credits</h3>
+          <div class="mt-2 flex flex-wrap gap-2 text-sm">
+            <span class="px-3 py-1 rounded-full bg-neutral-100 border">Reagan the Movie</span>
+            <span class="px-3 py-1 rounded-full bg-neutral-100 border">American Underdog</span>
+            <span class="px-3 py-1 rounded-full bg-neutral-100 border">Nefarious</span>
+            <span class="px-3 py-1 rounded-full bg-neutral-100 border">The Way I Heard It</span>
+            <span class="px-3 py-1 rounded-full bg-neutral-100 border">Killers of the Flower Moon</span>
+          </div>
+        </div>
+
+        <div class="mt-4 flex gap-4 text-sm">
+          <a href="https://www.facebook.com/profile.php?id=61581578159014" target="_blank" rel="noreferrer" class="underline">Facebook</a>
+          <a href="https://www.imdb.com/name/nm12593049/" target="_blank" rel="noreferrer" class="underline">IMDb</a>
+        </div>
+      </div>
+
+      <div class="rounded-xl overflow-hidden shadow aspect-[4/3] bg-neutral-200 md:col-span-1 flex items-center justify-center">
+        <!-- Optional owner photo: put at /assets/owner.jpg -->
+        <img src="/assets/logo-dark.png" alt="On The Level LLC" class="max-w-[240px] w-full h-auto opacity-80" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16 border-t">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold">Contact</h2>
+      <p class="text-neutral-600 mt-2">Tell us about your project. We’ll respond quickly.</p>
+
+      <div class="grid md:grid-cols-3 gap-6 mt-8 text-sm">
+        <div>Email: <a class="underline" href="mailto:hello@example.com">hello@example.com</a></div>
+        <div>Phone: <a class="underline" href="tel:+19180000000">(918) 000-0000</a></div>
+        <div>Claremore, Oklahoma • Serving OK & beyond</div>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="py-10 text-center text-sm text-neutral-600 border-t bg-white">
     <div class="max-w-6xl mx-auto px-4 flex flex-col items-center gap-2">
       <img src="/assets/logo-transparent.png" onerror="this.src='/assets/logo-dark.png'" alt="On The Level LLC" class="h-12 w-auto" />
-      <div>&copy; 2025 On The Level LLC • A Creative Construction Company</div>
+      <div>&copy; <span id="year"></span> On The Level LLC • A Creative Construction Company</div>
     </div>
   </footer>
+
+  <!-- Scripts: current year + numbered gallery -->
+  <script>
+    // Current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Numbered gallery builder
+    (function buildWorkGallery() {
+      const MAX_WORK_IMAGES = 50; // increase if you need more later
+      const grid = document.getElementById('work-grid');
+
+      function addWorkImage(n) {
+        const wrap = document.createElement('div');
+        wrap.className = 'rounded-xl overflow-hidden bg-neutral-200';
+        wrap.style.aspectRatio = '4/3';
+
+        const img = document.createElement('img');
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        img.alt = 'Project ' + n;
+        img.className = 'w-full h-full object-cover';
+        img.src = '/assets/work-' + n + '.jpg';
+
+        img.onerror = function () {
+          if (!img.dataset.triedPng) {
+            img.dataset.triedPng = '1';
+            img.src = '/assets/work-' + n + '.png';
+          } else {
+            wrap.remove(); // remove empty slot if image not found
+          }
+        };
+
+        wrap.appendChild(img);
+        grid.appendChild(wrap);
+      }
+
+      for (let i = 1; i <= MAX_WORK_IMAGES; i++) addWorkImage(i);
+    })();
+  </script>
 </body>
 </html>
